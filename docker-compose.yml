@@ -1,0 +1,24 @@
+version: '2'
+services:
+  bash:
+    build:
+      context: . 
+    environment:
+      - DISPLAY=$DISPLAY
+    env_file: .env
+    volumes:
+      - .:src/docker-practice
+      - /tmp/:/tmp/
+    entrypoint: /bin/bash
+  
+  notebook:
+    build:
+      context: .
+    environment:
+      - DISPLAY=$DISPLAY
+    env_file: .env
+    ports:
+      - "2222:8888"
+    volumes:
+      - .:src/docker-practice
+      - /tmp/:/tmp/
