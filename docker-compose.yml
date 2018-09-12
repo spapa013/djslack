@@ -7,7 +7,7 @@ services:
       - DISPLAY=$DISPLAY
     env_file: .env
     volumes:
-      - .:src/docker-practice
+      - .:src/djslack
       - /tmp/:/tmp/
     entrypoint: /bin/bash
   
@@ -20,5 +20,5 @@ services:
     ports:
       - "2222:8888"
     volumes:
-      - .:src/docker-practice
+      - .:src/djslack
       - /tmp/:/tmp/
